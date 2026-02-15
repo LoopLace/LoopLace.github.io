@@ -8,67 +8,24 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="background-decor">
-    <div class="cloud cloud-1">☁️</div>
-    <div class="cloud cloud-2">☁️</div>
-    <div class="star star-1">✨</div>
-    <div class="star star-2">🎀</div>
-    <div class="heart heart-1">🌸</div>
-  </div>
-
   <div class="container">
-    <header class="header">
-      <div class="avatar-container">
-        <div class="avatar-placeholder">🌀</div>
-      </div>
-      <h1 class="name">LoopLace</h1>
-      <p class="tagline">digital lace • developer & pixel dreamer</p>
-    </header>
-
-    <section class="about">
-      <p>
-        Привет! Я — LoopLace.<br>
-        Пишу код, рисую узоры и чиню битые SVG.<br>
-        Люблю пастель, лунные ночи и японские стихи.
-      </p>
-    </section>
+    <h1 class="name">LoopLace</h1>
+    
+    <p class="about">
+      ある日、コードの海で出会った小さな魔法使い<br>
+      Пишу код • чиню SVG • рисую пиксели
+    </p>
 
     <nav class="links">
-      <a href="https://github.com/LoopLace" class="btn">
-        <span class="icon">🐙</span> GitHub
-      </a>
-      <a href="https://twitter.com/looplace_art" class="btn">
-        <span class="icon">🐦</span> Twitter / X
-      </a>
-      <a href="https://t.me/looplace_dev" class="btn">
-        <span class="icon">💬</span> Telegram
-      </a>
-      <a href="mailto:looplace.dev@gmail.com" class="btn">
-        <span class="icon">💌</span> Email
-      </a>
+      <a href="https://github.com/LoopLace" class="btn">🐙 GitHub</a>
+      <a href="https://twitter.com/looplace_art" class="btn">🐦 Twitter</a>
+      <a href="https://t.me/looplace_dev" class="btn">💬 Telegram</a>
+      <a href="mailto:looplace.dev@gmail.com" class="btn">💌 Email</a>
     </nav>
 
     <footer class="footer">
-      made with love & broken pixels 💫<br>
-      ありがとう、会えて嬉しいです 🎌
+      ありがとう 🎌
     </footer>
   </div>
-
-  <div class="toast" id="toast">Link copied!</div>
-
-  <script>
-    document.querySelectorAll('.btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        if (e.target.href && e.target.href.startsWith('http')) return;
-        const url = e.currentTarget.href;
-        if (!url || url === '#') return;
-        navigator.clipboard.writeText(url).then(() => {
-          const toast = document.getElementById('toast');
-          toast.classList.add('show');
-          setTimeout(() => toast.classList.remove('show'), 2000);
-        });
-      });
-    });
-  </script>
 </body>
 </html>
