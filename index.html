@@ -1,109 +1,74 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreamSweat Vibes</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LoopLace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="background-decor">
-        <div class="cloud cloud-1">☁️</div>
-        <div class="cloud cloud-2">☁️</div>
-        <div class="star star-1">✨</div>
-        <div class="star star-2">✨</div>
-        <div class="heart heart-1">💖</div>
-    </div>
+  <div class="background-decor">
+    <div class="cloud cloud-1">☁️</div>
+    <div class="cloud cloud-2">☁️</div>
+    <div class="star star-1">✨</div>
+    <div class="star star-2">🎀</div>
+    <div class="heart heart-1">🌸</div>
+  </div>
 
-    <div class="container">
-        <header class="header">
-            <div class="avatar-container">
-                <!-- Placeholder for avatar -->
-                <div class="avatar-placeholder">🌸</div>
-            </div>
-            <h1 class="name">CreamSweat</h1>
-            <p class="tagline">digital cutie • artist & cozy vibes • just a soft place</p>
-        </header>
+  <div class="container">
+    <header class="header">
+      <div class="avatar-container">
+        <div class="avatar-placeholder">🌀</div>
+      </div>
+      <h1 class="name">LoopLace</h1>
+      <p class="tagline">digital lace • developer & pixel dreamer</p>
+    </header>
 
-        <section class="about">
-            <p>Создаю мягкие, воздушные пространства в интернете.<br>Люблю пастельные тона, маршмеллоу и уютные вечера.</p>
-        </section>
+    <section class="about">
+      <p>
+        Привет! Я — LoopLace.<br>
+        Пишу код, рисую узоры и чиню битые SVG.<br>
+        Люблю пастель, лунные ночи и японские стихи.
+      </p>
+    </section>
 
-        <section class="links">
-            <!-- Link: Instagram -->
-            <a href="https://instagram.com" target="_blank" class="btn" data-type="link">
-                <span class="icon">📷</span> Instagram
-            </a>
+    <nav class="links">
+      <a href="https://github.com/LoopLace" class="btn">
+        <span class="icon">🐙</span> GitHub
+      </a>
+      <a href="https://twitter.com/looplace_art" class="btn">
+        <span class="icon">🐦</span> Twitter / X
+      </a>
+      <a href="https://t.me/looplace_dev" class="btn">
+        <span class="icon">💬</span> Telegram
+      </a>
+      <a href="mailto:looplace.dev@gmail.com" class="btn">
+        <span class="icon">💌</span> Email
+      </a>
+    </nav>
 
-            <!-- Link: Telegram -->
-            <a href="https://t.me/creamsweat" target="_blank" class="btn" data-type="link">
-                <span class="icon">✈️</span> Telegram Channel
-            </a>
+    <footer class="footer">
+      made with love & broken pixels 💫<br>
+      ありがとう、会えて嬉しいです 🎌
+    </footer>
+  </div>
 
-            <!-- Copy: Discord -->
-            <a href="#" class="btn" data-type="copy" data-content="CreamSweat#1234" data-toast="Discord copied! (CreamSweat#1234) 👾">
-                <span class="icon">👾</span> Discord
-            </a>
+  <div class="toast" id="toast">Link copied!</div>
 
-            <!-- Copy: Email -->
-            <a href="#" class="btn" data-type="copy" data-content="hello@creamsweat.com" data-toast="Email copied! 💌">
-                <span class="icon">💌</span> Contact Email
-            </a>
-
-            <!-- Link: Support -->
-            <a href="https://buymeacoffee.com" target="_blank" class="btn" data-type="link">
-                <span class="icon">☕</span> Buy me a coffee
-            </a>
-        </section>
-
-        <footer class="footer">
-            <p>made with love & cream vibes 🍰</p>
-        </footer>
-    </div>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="toast">Link copied!</div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const buttons = document.querySelectorAll('.btn');
-            const toast = document.getElementById('toast');
-
-            buttons.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const type = btn.getAttribute('data-type');
-                    
-                    // Handle Copy Buttons
-                    if (type === 'copy') {
-                        e.preventDefault();
-                        const contentToCopy = btn.getAttribute('data-content') || btn.innerText.trim();
-                        const toastMessage = btn.getAttribute('data-toast') || `Copied: ${contentToCopy} ✨`;
-                        
-                        navigator.clipboard.writeText(contentToCopy).then(() => {
-                            showToast(toastMessage);
-                        }).catch(err => {
-                            console.error('Failed to copy: ', err);
-                            showToast('Failed to copy 😢');
-                        });
-                    }
-                    // Handle Link Buttons: allow default navigation
-                });
-            });
-
-            function showToast(message) {
-                toast.textContent = message;
-                toast.classList.add('show');
-                
-                if (toast.timeoutId) clearTimeout(toast.timeoutId);
-                
-                toast.timeoutId = setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 3000);
-            }
+  <script>
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        if (e.target.href && e.target.href.startsWith('http')) return;
+        const url = e.currentTarget.href;
+        if (!url || url === '#') return;
+        navigator.clipboard.writeText(url).then(() => {
+          const toast = document.getElementById('toast');
+          toast.classList.add('show');
+          setTimeout(() => toast.classList.remove('show'), 2000);
         });
-    </script>
+      });
+    });
+  </script>
 </body>
 </html>
